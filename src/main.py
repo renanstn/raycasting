@@ -1,4 +1,5 @@
 import settings
+import raycasting
 from player import Player
 from map import world_map
 import math
@@ -15,10 +16,23 @@ while True:
         if event.type == pygame.QUIT:
             exit()
 
+    # Computa os movimentos do player
     player.movement()
+    # Preenche o background
     screen.fill(settings.BLACK)
 
-    pygame.draw.circle(screen, settings.GREEN, player.position, 12)
+    # Calcula o raycasting
+    raycasting.raycasting(screen, player.position, player.angle)
+
+    # Desenha o player
+    pygame.draw.circle(
+        screen,
+        settings.GREEN,
+        (int(player.x), int(player.y)),
+        12
+    )
+
+    # Desenha a linha de direção do player
     pygame.draw.line(
         screen,
         settings.GREEN,

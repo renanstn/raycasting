@@ -21,6 +21,10 @@ while True:
     # Preenche o background
     screen.fill(settings.BLACK)
 
+    # Desenha o teto e o piso
+    pygame.draw.rect(screen, settings.BLUE, (0, 0, settings.WIDTH, settings.HALF_HEIGHT))
+    pygame.draw.rect(screen, settings.DARKGRAY, (0, settings.HALF_HEIGHT, settings.WIDTH, settings.HALF_HEIGHT))
+
     # Calcula o raycasting
     raycasting.raycasting(screen, player.position, player.angle)
 

@@ -4,6 +4,7 @@ HEIGHT = 800
 HALF_WIDTH = WIDTH / 2
 HALF_HEIGHT = HEIGHT / 2
 FPS = 60
+TILE = 100
 
 # Player settings
 player_position = (HALF_WIDTH, HALF_HEIGHT)

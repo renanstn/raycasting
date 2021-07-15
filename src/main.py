@@ -1,5 +1,7 @@
 import settings
 from player import Player
+from map import world_map
+import math
 import pygame
 
 
@@ -17,6 +19,25 @@ while True:
     screen.fill(settings.BLACK)
 
     pygame.draw.circle(screen, settings.GREEN, player.position, 12)
+    pygame.draw.line(
+        screen,
+        settings.GREEN,
+        player.position,
+        (
+            player.x + settings.WIDTH * math.cos(player.angle),
+            player.y + settings.WIDTH * math. sin(player.angle)
+        ),
+        2
+    )
+
+    # Desenha o mapa
+    for x, y in world_map:
+        pygame.draw.rect(
+            screen,
+            settings.DARKGRAY,
+            (x, y, settings.TILE, settings.TILE),
+            2
+        )
 
     pygame.display.flip()
     clock.tick(settings.FPS)

@@ -6,3 +6,4 @@
 - https://www.youtube.com/watch?v=faYT-bgyhkE
 - https://www.youtube.com/watch?v=eOCQfxRQ2pY
 - https://github.com/Magoninho/raycasting-js
+- https://github.com/angelitomg/raycasting

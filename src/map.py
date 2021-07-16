@@ -15,7 +15,9 @@ text_map = [
 
 # Transforma o mapa de caracteres acima em um mapa de blocos
 world_map = set()
+mini_map = set()
 for j, row in enumerate(text_map):
     for i, char in enumerate(row):
         if char == 'W':
             world_map.add((i * settings.TILE, j * settings.TILE))
+            mini_map.add((i * settings.MAP_TILE, j * settings.MAP_TILE))

@@ -8,8 +8,13 @@ HALF_WIDTH = WIDTH / 2
 HALF_HEIGHT = HEIGHT / 2
 FPS = 60
 TILE = 100
-SHOW_MAP = False
+SHOW_MAP = True
 FPS_POSITION = (WIDTH - 65, 5)
+
+# Minimap settings
+MAP_SCALE = 5
+MAP_TILE = TILE // MAP_SCALE
+MAP_POSITION = (0, HEIGHT - HEIGHT // MAP_SCALE)
 
 # Raycasting settings
 FOV = math.pi / 3
@@ -32,8 +37,9 @@ player_speed = 2
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (220, 0, 0)
-GREEN = (0, 220, 0)
+GREEN = (0, 80, 0)
 BLUE = (0, 0, 255)
 DARKGRAY = (40, 40, 40)
 PURPLE = (120, 0, 120)
 SKYBLUE = (0, 186, 255)
+YELLOW = (220, 220, 0)

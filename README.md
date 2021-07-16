@@ -9,3 +9,4 @@
 - https://github.com/angelitomg/raycasting
 - https://dev.opera.com/articles/3d-games-with-canvas-and-raycasting-part-1/
 - https://lodev.org/cgtutor/raycasting.html
+- https://github.com/mdn/canvas-raycaster

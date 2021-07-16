@@ -26,9 +26,9 @@ def raycasting(screen, player_position: tuple, player_angle: int):
                 # Calcula a altura de cada linha de projeção
                 projection_height = settings.PROJECTION_COEFFICIENT / depth
                 # Calcula a cor da parede de acordo com a "distância" da mesma
-                rgb_color = 255 / (1 + depth * depth * 0.0001)
+                rgb_color = 255 / (1 + depth * depth * 0.00002)
                 # color = (rgb_color, rgb_color, rgb_color)
-                color = (rgb_color // 2, rgb_color, rgb_color // 3)
+                color = (rgb_color, rgb_color  // 2, rgb_color // 3)
                 # Desenha o mundo 3D, toda a magia acontece bem aqui:
                 pygame.draw.rect(
                     screen,

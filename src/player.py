@@ -4,6 +4,9 @@ import pygame
 
 
 class Player:
+    """
+    Classe que representa o jogador e suas possíveis ações.
+    """
     def __init__(self) -> None:
         self.x, self.y = settings.player_position
         self.angle = settings.player_angle

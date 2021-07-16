@@ -13,13 +13,25 @@ class Drawing:
         self.screen = screen
         self.screen_map = screen_map
         self.font = pygame.font.SysFont('Arial', 36, bold=True)
+        self.textures = {
+            '1': pygame.image.load('textures/1.png').convert(),
+            '2': pygame.image.load('textures/2.png').convert(),
+            'S': pygame.image.load('textures/sky.png').convert(),
+        }
 
-    def background(self):
-        pygame.draw.rect(
-            self.screen,
-            settings.SKYBLUE,
-            (0, 0, settings.WIDTH, settings.HALF_HEIGHT)
-        )
+    def background(self, angle):
+        if settings.TEXTURES_ON:
+            # Calcula o offset da movimentação do céu quando o player gira
+            sky_offset = -5 * math.degrees(angle) % settings.WIDTH
+            self.screen.blit(self.textures['S'], (sky_offset, 0))
+            self.screen.blit(self.textures['S'], (sky_offset - settings.WIDTH, 0))
+            self.screen.blit(self.textures['S'], (sky_offset + settings.WIDTH, 0))
+        else:
+            pygame.draw.rect(
+                self.screen,
+                settings.SKYBLUE,
+                (0, 0, settings.WIDTH, settings.HALF_HEIGHT)
+            )
         pygame.draw.rect(
             self.screen,
             settings.DARKGRAY,
@@ -30,7 +42,12 @@ class Drawing:
 
     def world(self, player_position, player_angle):
         # raycasting(self.screen, player_position, player_angle)
-        optimized_raycasting(self.screen, player_position, player_angle)
+        optimized_raycasting(
+            self.screen,
+            player_position,
+            player_angle,
+            self.textures
+        )
 
     def fps(self, clock):
         display_fps = str(int(clock.get_fps()))
@@ -66,7 +83,7 @@ class Drawing:
         for x, y in mini_map:
             pygame.draw.rect(
                 self.screen_map,
-                settings.GREEN,
+                settings.SANDY,
                 (x, y, settings.MAP_TILE, settings.MAP_TILE)
             )
         self.screen.blit(self.screen_map, settings.MAP_POSITION)

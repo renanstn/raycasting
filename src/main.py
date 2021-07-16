@@ -21,7 +21,7 @@ while True:
 
     player.movement()
     screen.fill(settings.BLACK)
-    drawing.background()
+    drawing.background(player.angle)
     drawing.world(player.position, player.angle)
     drawing.fps(clock)
 

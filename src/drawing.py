@@ -1,7 +1,7 @@
 import math
 import pygame
 import settings
-from raycasting import raycasting
+from raycasting import optimized_raycasting, raycasting
 from map import world_map
 
 
@@ -28,7 +28,8 @@ class Drawing:
         )
 
     def world(self, player_position, player_angle):
-        raycasting(self.screen, player_position, player_angle)
+        # raycasting(self.screen, player_position, player_angle)
+        optimized_raycasting(self.screen, player_position, player_angle)
 
     def fps(self, clock):
         display_fps = str(int(clock.get_fps()))

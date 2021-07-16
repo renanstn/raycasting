@@ -1,8 +1,6 @@
 import settings
 from player import Player
 from drawing import Drawing
-from map import world_map
-import math
 import pygame
 
 

@@ -28,34 +28,35 @@ while True:
     # Calcula o raycasting
     raycasting.raycasting(screen, player.position, player.angle)
 
-    # Desenha o player
-    pygame.draw.circle(
-        screen,
-        settings.GREEN,
-        (int(player.x), int(player.y)),
-        12
-    )
-
-    # Desenha a linha de direção do player
-    pygame.draw.line(
-        screen,
-        settings.GREEN,
-        player.position,
-        (
-            player.x + settings.WIDTH * math.cos(player.angle),
-            player.y + settings.WIDTH * math. sin(player.angle)
-        ),
-        2
-    )
-
-    # Desenha o mapa
-    for x, y in world_map:
-        pygame.draw.rect(
+    if settings.SHOW_MAP:
+        # Desenha o player
+        pygame.draw.circle(
             screen,
-            settings.DARKGRAY,
-            (x, y, settings.TILE, settings.TILE),
+            settings.GREEN,
+            (int(player.x), int(player.y)),
+            12
+        )
+
+        # Desenha a linha de direção do player
+        pygame.draw.line(
+            screen,
+            settings.GREEN,
+            player.position,
+            (
+                player.x + settings.WIDTH * math.cos(player.angle),
+                player.y + settings.WIDTH * math. sin(player.angle)
+            ),
             2
         )
+
+        # Desenha o mapa
+        for x, y in world_map:
+            pygame.draw.rect(
+                screen,
+                settings.DARKGRAY,
+                (x, y, settings.TILE, settings.TILE),
+                2
+            )
 
     pygame.display.flip()
     clock.tick(settings.FPS)

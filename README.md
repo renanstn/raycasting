@@ -3,7 +3,7 @@
 ![screenshot 01](/screenshots/01.png)
 
 ## Referências
-- https://www.youtube.com/watch?v=SmKBsArp2dI
+- https://www.youtube.com/watch?v=SmKBsArp2dI&list=PLzuEVvwBnAsZGeSVhOXpnW-ULsGYpNyQe
 - https://www.youtube.com/watch?v=gYRrGTC7GtA
 - https://www.youtube.com/watch?v=faYT-bgyhkE
 - https://www.youtube.com/watch?v=eOCQfxRQ2pY

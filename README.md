@@ -1,5 +1,9 @@
 # pygame-raycasting
 
+Este projeto visa reproduzir a técnica de raycasting, utilizada por games antigos como Wolfenstein 3D para transformar um plano 2D em um cenário "3D" utilizando poucos recursos da máquina.
+
+Feito com base [nesta](https://www.youtube.com/watch?v=SmKBsArp2dI&list=PLzuEVvwBnAsZGeSVhOXpnW-ULsGYpNyQe) playlist.
+
 ![screenshot 01](/screenshots/01.png)
 
 ## Referências

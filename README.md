@@ -8,6 +8,7 @@ Feito com base [nesta](https://www.youtube.com/watch?v=SmKBsArp2dI&list=PLzuEVvw
 
 ## Referências
 - https://www.youtube.com/watch?v=SmKBsArp2dI&list=PLzuEVvwBnAsZGeSVhOXpnW-ULsGYpNyQe
+- https://permadi.com/1996/05/ray-casting-tutorial-table-of-contents
 - https://www.youtube.com/watch?v=gYRrGTC7GtA
 - https://www.youtube.com/watch?v=faYT-bgyhkE
 - https://www.youtube.com/watch?v=eOCQfxRQ2pY

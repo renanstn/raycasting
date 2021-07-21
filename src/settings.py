@@ -21,7 +21,7 @@ FOV = math.pi / 3
 HALF_FOV = FOV / 2
 NUM_RAYS = 300
 # NUM_RAYS = 120
-MAX_DEPTH = 800
+MAX_DEPTH = 800  # Usado somente na versão não otimizada
 DELTA_ANGLE = FOV / NUM_RAYS
 DISTANCE = NUM_RAYS / (2 * math.tan(HALF_FOV))
 PROJECTION_COEFFICIENT = 3 * DISTANCE * TILE
@@ -34,7 +34,7 @@ TEXTURE_HEIGHT = 1200
 TEXTURE_SCALE = TEXTURE_WIDTH // TILE
 
 # Player settings
-player_position = (HALF_WIDTH, HALF_HEIGHT)
+player_position = (HALF_WIDTH // 4, HALF_HEIGHT - 50)
 player_angle = 0
 player_speed = 2
 
@@ -49,3 +49,5 @@ PURPLE = (120, 0, 120)
 SKYBLUE = (0, 186, 255)
 YELLOW = (220, 220, 0)
 SANDY = (244, 164, 96)
+DARKBROWN = (97, 61, 25)
+DARKORANGE = (255, 140, 0)

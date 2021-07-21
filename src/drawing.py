@@ -14,15 +14,16 @@ class Drawing:
         self.screen_map = screen_map
         self.font = pygame.font.SysFont('Arial', 36, bold=True)
         self.textures = {
-            '1': pygame.image.load('textures/1.png').convert(),
-            '2': pygame.image.load('textures/2.png').convert(),
-            'S': pygame.image.load('textures/sky.png').convert(),
+            '1': pygame.image.load('textures/wall1.png').convert(),
+            '2': pygame.image.load('textures/wall2.png').convert(),
+            'S': pygame.image.load('textures/sky3.png').convert(),
         }
 
     def background(self, angle):
+        # Desenha o céu
         if settings.TEXTURES_ON:
             # Calcula o offset da movimentação do céu quando o player gira
-            sky_offset = -5 * math.degrees(angle) % settings.WIDTH
+            sky_offset = -10 * math.degrees(angle) % settings.WIDTH
             self.screen.blit(self.textures['S'], (sky_offset, 0))
             self.screen.blit(self.textures['S'], (sky_offset - settings.WIDTH, 0))
             self.screen.blit(self.textures['S'], (sky_offset + settings.WIDTH, 0))
@@ -32,6 +33,7 @@ class Drawing:
                 settings.SKYBLUE,
                 (0, 0, settings.WIDTH, settings.HALF_HEIGHT)
             )
+        # Desenha o chão
         pygame.draw.rect(
             self.screen,
             settings.DARKGRAY,
@@ -51,7 +53,7 @@ class Drawing:
 
     def fps(self, clock):
         display_fps = str(int(clock.get_fps()))
-        render = self.font.render(display_fps, 0, settings.RED)
+        render = self.font.render(display_fps, 0, settings.DARKORANGE)
         self.screen.blit(render, settings.FPS_POSITION)
 
     def mini_map(self, player):
@@ -71,7 +73,7 @@ class Drawing:
             2
         )
 
-        # Desenha o player
+        # Desenha a posição do player
         pygame.draw.circle(
             self.screen_map,
             settings.RED,
@@ -83,7 +85,7 @@ class Drawing:
         for x, y in mini_map:
             pygame.draw.rect(
                 self.screen_map,
-                settings.SANDY,
+                settings.DARKBROWN,
                 (x, y, settings.MAP_TILE, settings.MAP_TILE)
             )
         self.screen.blit(self.screen_map, settings.MAP_POSITION)

@@ -21,3 +21,4 @@ Repositório destinado ao estudo e reprodução da técnica de Raycasting, utili
 - Wolfenstein 3D's map renderer: https://www.youtube.com/watch?v=eOCQfxRQ2pY
 - Creating Pseudo 3D Games With HTML 5 Canvas and Raycasting — Part 1: https://dev.opera.com/articles/3d-games-with-canvas-and-raycasting-part-1/
 - Lode's Computer Graphics Tutorial - Raycasting: https://lodev.org/cgtutor/raycasting.html
+- Code-It-Yourself! First Person Shooter (Quick and Simple C++): https://www.youtube.com/watch?v=xW8skO7MFYw

@@ -5,12 +5,12 @@ Repositório destinado ao estudo e reprodução da técnica de Raycasting, utili
 ## Linguagens
 
 ### Python
- - Feito com base [nesta](https://www.youtube.com/watch?v=SmKBsArp2dI&list=PLzuEVvwBnAsZGeSVhOXpnW-ULsGYpNyQe) playlist.
+ - Feito utilizando o [pygame](https://www.pygame.org/wiki/about) com base [nesta](https://www.youtube.com/watch?v=SmKBsArp2dI&list=PLzuEVvwBnAsZGeSVhOXpnW-ULsGYpNyQe) playlist.
+
+![screenshot 01](/screenshots/pygame_print.png)
 
 ### Javascript
 - Feito com base [neste](https://github.com/vinibiavatti1/RayCastingTutorial/wiki) incrível tutorial.
-
-![screenshot 01](/screenshots/pygame_print.png)
 
 ## Referências
 - https://permadi.com/1996/05/ray-casting-tutorial-table-of-contents

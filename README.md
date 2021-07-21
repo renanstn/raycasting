@@ -1,5 +1,7 @@
 # raycasting
 
+![raycasting GIF](/screenshots/raycasting.gif)
+
 Repositório destinado ao estudo e reprodução da técnica de Raycasting, utilizada por games antigos como Wolfenstein 3D para transformar um plano 2D em um cenário "3D" utilizando poucos recursos da máquina.
 
 ## Linguagens

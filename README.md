@@ -4,7 +4,7 @@ Este projeto visa reproduzir a técnica de raycasting, utilizada por games antig
 
 Feito com base [nesta](https://www.youtube.com/watch?v=SmKBsArp2dI&list=PLzuEVvwBnAsZGeSVhOXpnW-ULsGYpNyQe) playlist.
 
-![screenshot 01](/screenshots/01.png)
+![screenshot 01](/screenshots/pygame_print.png)
 
 ## Referências
 - https://www.youtube.com/watch?v=SmKBsArp2dI&list=PLzuEVvwBnAsZGeSVhOXpnW-ULsGYpNyQe

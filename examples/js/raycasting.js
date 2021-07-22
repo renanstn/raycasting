@@ -129,6 +129,7 @@ function rayCasting() {
         );
 
         // Fish eye fix
+        // Formula: adjacent side = hypotenuse * COS(ray angle - player angle)
         distance = distance * Math.cos(degreeToRadians(rayAngle - data.player.angle));
 
         // Wall height

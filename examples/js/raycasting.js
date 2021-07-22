@@ -60,10 +60,7 @@ document.body.appendChild(screen);
 // Canvas context
 const screenContext = screen.getContext("2d");
 
-/**
- * Movement Event
- */
- document.addEventListener('keydown', (event) => {
+document.addEventListener('keydown', (event) => {
     let keyCode = event.code;
 
     if (keyCode === data.key.up) {
@@ -95,9 +92,6 @@ const screenContext = screen.getContext("2d");
     }
 });
 
-/**
- * Raycasting logic
- */
 function rayCasting() {
     let rayAngle = data.player.angle - data.player.halfFov;
 
@@ -147,9 +141,6 @@ function rayCasting() {
     }
 }
 
-/**
- * Clear screen
- */
 function clearScreen() {
     screenContext.clearRect(0, 0, data.screen.width, data.screen.height);
 }
@@ -157,9 +148,6 @@ function clearScreen() {
 // Start
 main();
 
-/**
- * Main loop
- */
 function main() {
     setInterval(function() {
         clearScreen();

@@ -129,10 +129,14 @@ function rayCasting() {
         // Wall height
         let wallHeight = Math.floor(data.screen.halfHeight / distance);
 
+        // Calc wall color by distance
+        rgb_color = 255 / (1 + distance * distance * 0.2)
+
         // Draw sky
         drawLine(rayCount, 0, rayCount, data.screen.halfHeight - wallHeight, "cyan");
         // Draw wall
-        drawLine(rayCount, data.screen.halfHeight - wallHeight, rayCount, data.screen.halfHeight + wallHeight, "red");
+        // drawLine(rayCount, data.screen.halfHeight - wallHeight, rayCount, data.screen.halfHeight + wallHeight, "red");
+        drawLine(rayCount, data.screen.halfHeight - wallHeight, rayCount, data.screen.halfHeight + wallHeight, `rgb(${rgb_color},${rgb_color},${rgb_color})`);
         // Draw floor
         drawLine(rayCount, data.screen.halfHeight + wallHeight, rayCount, data.screen.height, "green");
 

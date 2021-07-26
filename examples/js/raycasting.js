@@ -112,7 +112,7 @@ function rayCasting() {
             wall = data.map[Math.floor(ray.y)][Math.floor(ray.x)];
         }
 
-        // Pythagoras Theorem: a² + b² = c²
+        // Pythagoras Theorem:  c² = a² + b²
         // Formula: distance² = (player x - ray x)² + (player y - ray y)²
         let distance = Math.sqrt(
             Math.pow(data.player.x - ray.x, 2) +

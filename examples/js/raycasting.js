@@ -6,9 +6,6 @@ let data = {
         halfWidth: null,
         halfHeight: null
     },
-    render: {
-        delay: 30
-    },
     rayCasting: {
         incrementAngle: null,
         precision: 64
@@ -149,12 +146,11 @@ function clearScreen() {
     screenContext.clearRect(0, 0, data.screen.width, data.screen.height);
 }
 
-// Start
-main();
-
-function main() {
-    setInterval(function() {
-        clearScreen();
-        rayCasting();
-    }, data.render.delay);
+function draw() {
+    clearScreen();
+    rayCasting();
+    requestAnimationFrame(draw);
 }
+
+// Start
+draw();

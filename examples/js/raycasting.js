@@ -6,6 +6,11 @@ let data = {
         halfWidth: null,
         halfHeight: null
     },
+    minimap: {
+        width: 100,
+        height: 100,
+        unit: 10
+    },
     rayCasting: {
         incrementAngle: null,
         precision: 64
@@ -18,7 +23,7 @@ let data = {
         angle: 90,
         speed: {
             movement: 0.5,
-            rotation: 5.0
+            rotation: 8.0
         }
     },
     key: {
@@ -48,14 +53,11 @@ data.rayCasting.incrementAngle = data.player.fov / data.screen.width;
 data.player.halfFov = data.player.fov / 2;
 
 // Canvas
-const screen = document.createElement('canvas');
-screen.width = data.screen.width;
-screen.height = data.screen.height;
-screen.style.border = "1px solid black";
-document.body.appendChild(screen);
-
-// Canvas context
+const screen = document.getElementById("screen");
 const screenContext = screen.getContext("2d");
+// Minimap
+const minimap = document.getElementById("minimap");
+const minimapContext = minimap.getContext("2d");
 
 document.addEventListener('keydown', (event) => {
     let keyCode = event.code;
@@ -87,6 +89,7 @@ document.addEventListener('keydown', (event) => {
     } else if (keyCode === data.key.right) {
         data.player.angle += data.player.speed.rotation;
     }
+    drawMinimap();
 });
 
 function rayCasting() {
@@ -142,10 +145,62 @@ function rayCasting() {
     }
 }
 
+function drawMinimap() {
+    // Clear minimap
+    minimapContext.clearRect(0, 0, data.minimap.width, data.minimap.height);
+
+    // Floor
+    minimapContext.beginPath();
+    minimapContext.rect(0, 0, data.minimap.width, data.minimap.height);
+    minimapContext.fillStyle  = "green";
+    minimapContext.fill();
+
+    // Map
+    for (let y = 0; y < data.map.length; y++) {
+        for (let x = 0; x < data.map[y].length; x++) {
+            if (data.map[y][x] == 1) {
+                minimapContext.beginPath();
+                minimapContext.rect(
+                    x * data.minimap.unit,
+                    y * data.minimap.unit,
+                    x + data.minimap.unit,
+                    y + data.minimap.unit
+                );
+                minimapContext.fillStyle  = "cyan";
+                minimapContext.fill();
+            }
+        }
+    }
+
+    // Player
+    minimapContext.beginPath();
+    minimapContext.arc(
+        data.player.x * 10,
+        data.player.y * 10,
+        4,
+        0,
+        2 * Math.PI,
+        false
+    );
+    minimapContext.fillStyle  = "red";
+    minimapContext.fill();
+
+    // Player direction
+    minimapContext.beginPath();
+    minimapContext.moveTo(data.player.x * 10, data.player.y * 10);
+    minimapContext.lineTo(
+        (data.player.x * 10) + 10 * Math.cos(degreeToRadians(data.player.angle)),
+        (data.player.y * 10) + 10 * Math.sin(degreeToRadians(data.player.angle))
+    );
+    minimapContext.strokeStyle = "yellow";
+    minimapContext.stroke();
+}
+
 function clearScreen() {
     screenContext.clearRect(0, 0, data.screen.width, data.screen.height);
 }
 
+// Main function
 function draw() {
     clearScreen();
     rayCasting();
@@ -153,4 +208,5 @@ function draw() {
 }
 
 // Start
+drawMinimap();
 draw();

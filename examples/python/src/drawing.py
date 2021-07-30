@@ -68,7 +68,7 @@ class Drawing:
             (map_x, map_y),
             (
                 map_x + 12 * math.cos(player.angle),
-                map_y + 12 * math. sin(player.angle)
+                map_y + 12 * math.sin(player.angle)
             ),
             2
         )

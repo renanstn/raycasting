@@ -1,5 +1,8 @@
 # raycasting
 
+[![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)](https://www.javascript.com/)
+[![Python](https://img.shields.io/badge/python-%2314354C.svg?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+
 ![raycasting GIF](/screenshots/raycasting.gif)
 
 Repositório destinado ao estudo e reprodução da técnica de Raycasting, utilizada por games antigos como Wolfenstein 3D para transformar um plano 2D em um cenário "3D" utilizando poucos recursos da máquina.

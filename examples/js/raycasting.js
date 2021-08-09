@@ -7,9 +7,9 @@ let data = {
         halfHeight: null
     },
     minimap: {
-        width: 100,
-        height: 100,
-        unit: 10
+        width: 480,
+        height: 480,
+        unit: 48
     },
     rayCasting: {
         incrementAngle: null,
@@ -175,9 +175,9 @@ function drawMinimap() {
     // Player
     minimapContext.beginPath();
     minimapContext.arc(
-        data.player.x * 10,
-        data.player.y * 10,
-        4,
+        data.player.x * data.minimap.unit,
+        data.player.y * data.minimap.unit,
+        10,
         0,
         2 * Math.PI,
         false
@@ -187,10 +187,13 @@ function drawMinimap() {
 
     // Player direction
     minimapContext.beginPath();
-    minimapContext.moveTo(data.player.x * 10, data.player.y * 10);
+    minimapContext.moveTo(
+        data.player.x * data.minimap.unit,
+        data.player.y * data.minimap.unit
+    );
     minimapContext.lineTo(
-        (data.player.x * 10) + 10 * Math.cos(degreeToRadians(data.player.angle)),
-        (data.player.y * 10) + 10 * Math.sin(degreeToRadians(data.player.angle))
+        (data.player.x * data.minimap.unit) + 30 * Math.cos(degreeToRadians(data.player.angle)),
+        (data.player.y * data.minimap.unit) + 30 * Math.sin(degreeToRadians(data.player.angle))
     );
     minimapContext.strokeStyle = "yellow";
     minimapContext.stroke();

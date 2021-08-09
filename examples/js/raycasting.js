@@ -115,6 +115,16 @@ function rayCasting() {
             wall = data.map[Math.floor(ray.y)][Math.floor(ray.x)];
         }
 
+        // Draw ray
+        minimapContext.beginPath();
+        minimapContext.moveTo(
+            data.player.x * data.minimap.unit,
+            data.player.y * data.minimap.unit
+        );
+        minimapContext.lineTo(ray.x * data.minimap.unit, ray.y * data.minimap.unit);
+        minimapContext.strokeStyle = "orange";
+        minimapContext.stroke();
+
         // Pythagoras Theorem:  c² = a² + b²
         // Formula: distance² = (player x - ray x)² + (player y - ray y)²
         let distance = Math.sqrt(
